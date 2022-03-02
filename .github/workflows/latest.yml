@@ -2,8 +2,12 @@ name: cudawrappers
 
 on:
   push:
+    # on push
   workflow_dispatch:
-  # TODO and scheduled
+    # manual trigger
+  schedule:
+    # scheduled
+    - cron: "* 4 * * *"  
 
 jobs:
   validate:
