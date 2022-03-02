@@ -1,6 +1,7 @@
 name: cudawrappers
 
 on:
+  push:
   workflow_dispatch:
   # TODO and scheduled
 
