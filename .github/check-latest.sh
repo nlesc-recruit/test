@@ -1,4 +1,4 @@
-#! /bin/bash
+#!/bin/bash
 
 LATEST_TAG=\"$(curl --silent --header "Accept: application/vnd.github.v3+json" https://api.github.com/repos/nlesc-recruit/cudawrappers/releases/latest | jq .tag_name --raw-output)\"
 LATEST_REF=$(curl --silent --header "Accept: application/vnd.github.v3+json"   https://api.github.com/repos/nlesc-recruit/cudawrappers/tags | jq -c ".[] | select( .name | contains($LATEST_TAG))".commit.sha --raw-output)
