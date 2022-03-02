@@ -11,7 +11,9 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Check out a copy of this repository
-        uses: actions/checkout@v2
+        uses: actions/checkout@v3
+        with: 
+          submodules: true
 
       - name: Check whether this repository uses the latest version of the cudawrappers library
         run: .github/check-latest.sh
