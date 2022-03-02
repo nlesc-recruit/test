@@ -14,8 +14,7 @@ jobs:
 
       - name: Check whether this repository uses the latest version of the cudawrappers library
         run: |
-          LATEST=$(curl --silent --header "Accept: application/vnd.github.v3+json" \
-                   https://api.github.com/repos/nlesc-recruit/cudawrappers/releases/latest | jq .tag_name --raw-output)
+          LATEST=$(curl --silent --header "Accept: application/vnd.github.v3+json" https://api.github.com/repos/nlesc-recruit/cudawrappers/releases/latest | jq .tag_name --raw-output)
           cd external/cudawrappers
           MY_TAGS=$(git tag --points-at HEAD)
           for tag in $MY_TAGS; do
