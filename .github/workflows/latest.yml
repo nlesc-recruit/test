@@ -1,0 +1,17 @@
+name: cudawrappers
+
+on:
+  workflow_dispatch:
+  # TODO and scheduled
+
+jobs:
+  validate:
+    name: "dependency"
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out a copy of this repository
+        uses: actions/checkout@v2
+
+      - name: Check whether this repository uses the latest version of the cudawrappers library
+        run: |
+          echo 'hello'
