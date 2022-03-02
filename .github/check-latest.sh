@@ -3,6 +3,7 @@
 LATEST=$(curl --header "Accept: application/vnd.github.v3+json" https://api.github.com/repos/nlesc-recruit/cudawrappers/releases/latest | jq .tag_name --raw-output)
 echo $LATEST
 tree
+git submodule status external/cudawrappers/
 cd external/cudawrappers
 MY_TAGS=$(git tag --points-at HEAD)
 echo $MY_TAGS
