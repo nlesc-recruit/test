@@ -1,0 +1,3 @@
+[submodule "external/cudawrappers"]
+	path = external/cudawrappers
+	url = https://github.com/nlesc-recruit/cudawrappers
