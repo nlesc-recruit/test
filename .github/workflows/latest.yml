@@ -7,7 +7,7 @@ on:
     # manual trigger
   schedule:
     # scheduled
-    - cron: "* 4 * * *"  
+    - cron: "0 4 * * *"
 
 jobs:
   validate:
