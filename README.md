@@ -9,7 +9,7 @@ by having it included as a git submodule.
 To run the example, install the vector_add_example program from this repository:
 ```bash
 git clone --recurse-submodules https://github.com/nlesc-recruit/usage-example-git-submodules
-cd usage-example-locally-installed
+cd usage-example-git-submodules
 cmake -DCMAKE_INSTALL_PREFIX=$HOME/.local -S . -B build
 make -C build
 make -C build install
