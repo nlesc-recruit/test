@@ -1,7 +1,6 @@
-#include <iostream>
-
 #include <cudawrappers/cu.hpp>
 #include <cudawrappers/nvrtc.hpp>
+#include <iostream>
 
 void vector_add() {
   int N = 1024;
