@@ -32,7 +32,10 @@ void vector_add() {
 
   // compile kernel
   std::vector<std::string> options = {};
-  nvrtc::Program program("vector_add_kernel.cu");
+  const std::string vector_add_kernel =
+#include "vector_add_kernel.cu"
+      ;
+  nvrtc::Program program(vector_add_kernel, "vector_add_kernel");
   try {
     program.compile(options);
   } catch (nvrtc::Error &error) {
