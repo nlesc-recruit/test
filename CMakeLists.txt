@@ -13,6 +13,7 @@ set(CMAKE_BUILD_TYPE Release)
 # Use CMAKE_INSTALL_PREFIX when searching for libraries
 include(GNUInstallDirs)
 list(APPEND CMAKE_INSTALL_RPATH ${CMAKE_INSTALL_FULL_LIBDIR})
+find_package(CUDAToolkit ${CUDA_MIN_VERSION} REQUIRED)
 
 add_subdirectory(external/cudawrappers)
 
