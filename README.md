@@ -27,9 +27,6 @@ or, if `~/.local/bin` is not in your `$PATH`,
 ~/.local/bin/vector_add_example
 ```
 
-Once the example starts it looks for a vector_add_kernel.cu file in the current working
-directory. If the file is not found it throws an error.
-
 The expected behaviour is that
 ```
 hurray! 2
