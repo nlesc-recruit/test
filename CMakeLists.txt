@@ -14,10 +14,14 @@ set(CMAKE_BUILD_TYPE Release)
 include(GNUInstallDirs)
 list(APPEND CMAKE_INSTALL_RPATH ${CMAKE_INSTALL_FULL_LIBDIR})
 
+set(CUDA_MIN_VERSION 10.0)
+find_package(CUDAToolkit ${CUDA_MIN_VERSION} REQUIRED)
+
 add_subdirectory(external/cudawrappers)
 
 add_executable(vector_add_example vector_add.cpp)
 
+target_embed_source(vector_add_example vector_add_kernel.cu)
 target_link_libraries(vector_add_example PRIVATE cudawrappers::cu
                                                  cudawrappers::nvrtc)
 
