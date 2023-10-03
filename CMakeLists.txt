@@ -21,6 +21,7 @@ add_subdirectory(external/cudawrappers)
 
 add_executable(vector_add_example vector_add.cpp)
 
+target_embed_source(vector_add_example vector_add_kernel.cu)
 target_link_libraries(vector_add_example PRIVATE cudawrappers::cu
                                                  cudawrappers::nvrtc)
 

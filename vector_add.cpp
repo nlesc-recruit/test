@@ -31,8 +31,12 @@ void vector_add() {
   my_stream.memcpyHtoDAsync(d_b, b, bytesize);
 
   // compile kernel
+  extern const char _binary_vector_add_kernel_cu_start,
+      _binary_vector_add_kernel_cu_end;
+  const std::string kernel(&_binary_vector_add_kernel_cu_start,
+                           &_binary_vector_add_kernel_cu_end);
   std::vector<std::string> options = {};
-  nvrtc::Program program("vector_add_kernel.cu");
+  nvrtc::Program program(kernel, "vector_add_kernel.cu");
   try {
     program.compile(options);
   } catch (nvrtc::Error &error) {
@@ -40,7 +44,7 @@ void vector_add() {
     throw;
   }
 
-  cu::Module module = cu::Module((void *)program.getPTX().data());
+  cu::Module module(static_cast<const void *>(program.getPTX().data()));
 
   cu::Function function(module, "vector_add");
 
